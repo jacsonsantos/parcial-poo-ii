@@ -67,16 +67,6 @@ CREATE TABLE `funcionario` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `funcionario`
---
-
-LOCK TABLES `funcionario` WRITE;
-/*!40000 ALTER TABLE `funcionario` DISABLE KEYS */;
-INSERT INTO `funcionario` VALUES (1,NULL,'Jacson Santos Silva','0406777220103','SSPMA','0622317027'),(2,3,'Jacson Santos Silva','0406777220103','SSPMA','0622317027');
-/*!40000 ALTER TABLE `funcionario` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `hospedes`
 --
 
