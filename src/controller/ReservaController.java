@@ -5,10 +5,28 @@
  */
 package controller;
 
+import model.Reserva;
+import repository.ReservaRepository;
+
 /**
  *
  * @author jacson
  */
 public class ReservaController {
     
+  private ReservaRepository reservaRepository;
+
+  public ReservaController(){
+      this.reservaRepository = new ReservaRepository();
+  }
+  
+  public void salvar(Reserva reserva){
+      
+      this.reservaRepository.salvar(reserva);
+  }
+  
+  public void editar(Reserva reserva){
+      
+      this.reservaRepository.editar(reserva);
+  }
 }

@@ -20,8 +20,8 @@ import model.Reserva;
  */
 public class ReservaRepository {
     ConexaoDB cone = new ConexaoDB();
-    private HospedeRepository hospedeRepository;
-    private QuartoRepository quartoRepository;
+    public HospedeRepository hospedeRepository;
+    public QuartoRepository quartoRepository;
     //Reserva reserva = new Reserva();
 
     public ReservaRepository(HospedeRepository hospedeRepository,QuartoRepository quartoRepository) {
@@ -29,8 +29,8 @@ public class ReservaRepository {
         this.quartoRepository = quartoRepository;
     }
 
-    ReservaRepository() {
-        
+    public ReservaRepository() {
+
     }
     
     public void salvar(Reserva reserva) {
@@ -41,8 +41,8 @@ public class ReservaRepository {
                     + "reserva (hospede, quarto, checkin, reservado, checkout, "
                     + "diaria, valor) VALUES(?,?,?,?,?,?,?)");
             
-            ps.setInt(1, reserva.getHospede().getId());
-            ps.setInt(2, reserva.getQuarto().getId());
+            ps.setLong(1, reserva.getHospede().getId());
+            ps.setLong(2, reserva.getQuarto().getId());
             ps.setDate(3, (Date) reserva.getCheckin());
             ps.setDate(4, (Date) reserva.getReservado());
             ps.setDate(5, (Date) reserva.getCheckout());
@@ -73,7 +73,7 @@ public class ReservaRepository {
             ps.setDate(5, (Date) reserva.getCheckout());
             ps.setInt(6, reserva.getDiaria());
             ps.setFloat(7, reserva.getValor());
-            ps.setInt(8, reserva.getId());
+            ps.setLong(8, reserva.getId());
             ps.execute();
             JOptionPane.showMessageDialog(null, "Reserva Atualizado!");
             
@@ -89,7 +89,7 @@ public class ReservaRepository {
         
         try {
             PreparedStatement ps = cone.con.prepareStatement("DELETE FROM reserva WHERE id = ?");
-            ps.setInt(1, reserva.getId());
+            ps.setLong(1, reserva.getId());
             ps.execute();
             JOptionPane.showMessageDialog(null, "Reserva Deletado!");
             
@@ -118,7 +118,7 @@ public class ReservaRepository {
             reserva.setCheckout(cone.rs.getDate("checkout"));
             reserva.setDiaria(cone.rs.getInt("diaria"));
             reserva.setValor(cone.rs.getFloat("valor"));
-            reserva.setId(cone.rs.getInt("id"));
+            reserva.setId(cone.rs.getLong("id"));
             
         } catch(SQLException exception) {
             JOptionPane.showMessageDialog(null, "Reserva não encontrado!");

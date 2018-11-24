@@ -12,8 +12,8 @@ import java.util.Date;
  * @author jacson
  */
 public class Reserva {
-    
-    private int id;
+
+    private Long id;
     
     private Hospede hospede;
     
@@ -29,11 +29,11 @@ public class Reserva {
     
     private float valor;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

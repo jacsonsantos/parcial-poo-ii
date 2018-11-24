@@ -96,6 +96,11 @@ public class TelaFuncionario extends javax.swing.JFrame {
         btExcluir.setFocusable(false);
         btExcluir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btExcluir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btExcluirActionPerformed(evt);
+            }
+        });
         jToolBar1.add(btExcluir);
 
         btLIstar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icon/if_list-alt_173045.png"))); // NOI18N
@@ -215,6 +220,10 @@ public class TelaFuncionario extends javax.swing.JFrame {
     private void btEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btEditarActionPerformed
+
+    private void btExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btExcluirActionPerformed
 
     /**
      * @param args the command line arguments

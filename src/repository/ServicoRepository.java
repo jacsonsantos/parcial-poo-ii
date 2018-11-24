@@ -38,7 +38,7 @@ public class ServicoRepository {
             PreparedStatement ps = cone.con.prepareStatement("INSERT INTO "
                     + "servico (reserva, produto, quantidade) VALUES(?,?,?)");
             
-            ps.setInt(1, servico.getReserva().getId());
+            ps.setLong(1, servico.getReserva().getId());
             ps.setInt(2, servico.getProduto().getId());
             ps.setInt(3, servico.getQuantidade());
             ps.execute();
@@ -58,7 +58,7 @@ public class ServicoRepository {
             PreparedStatement ps = cone.con.prepareStatement("UPDATE servico "
                     + "SET reserva = ?, produto = ?, quantidade = ? WHERE id = ?");
             
-            ps.setInt(1, servico.getReserva().getId());
+            ps.setLong(1, servico.getReserva().getId());
             ps.setInt(2, servico.getProduto().getId());
             ps.setInt(3, servico.getQuantidade());
             ps.setInt(4, servico.getId());
